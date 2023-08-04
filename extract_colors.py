@@ -23,7 +23,7 @@ def extract_dominant_colors(image_path, n_colors=1):
     pixels = image.reshape(-1, 3)
 
     # Apply KMeans clustering to find the dominant color(s)
-    kmeans = KMeans(n_clusters=n_colors, n_init=10)  # Explicitly set n_init to 10 to suppress the warning
+    kmeans = KMeans(n_clusters=n_colors, n_init=10)
     kmeans.fit(pixels)
     dominant_colors = kmeans.cluster_centers_.astype(int)
 
