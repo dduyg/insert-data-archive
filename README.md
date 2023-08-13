@@ -7,7 +7,7 @@ Here you can find the source code of various ‘Insert Data’ works.
 
 | Name Work          | Publish Date | Code | Link to Post |
 | ------------------ | ------------ | ---- | ------------ |
-| Summer Night Bytes |              | code/between_the_lines |              |
-| Between The Lines  |              |      |              |
+| Summer Night Bytes |              | code/summer_night_bytes |              |
+| Between The Lines  |              | code/between_the_lines |              |
 | Here               |              |      |              |
 | Here               |              |      |              |
