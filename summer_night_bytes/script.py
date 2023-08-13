@@ -46,7 +46,7 @@ def analyze_images(directory):
                 exif_data = img._getexif()
                 
                 if exif_data and 36867 in exif_data:  # Check if image has DateTimeOriginal tag
-                    capture_time = exif_data[36867]  # Extract DateTimeOriginal tag
+                    capture_time = exif_data[36867]  # Extract DateTimeOriginal tag value
                     datetime_obj = datetime.strptime(capture_time, "%Y:%m:%d %H:%M:%S")
                     hour = datetime_obj.hour
                     time_category = categorize_time_range(hour)  # Categorize time based on hour
@@ -54,7 +54,7 @@ def analyze_images(directory):
                     for label, (start, end), hex_range in time_ranges:
                         if label == time_category:
                             ratio = (hour - start) / (end - start)
-                            hex_color = generate_hex_color(hex_range[0], hex_range[-1], ratio)
+                            hex_color = generate_hex_color(hex_range[0], hex_range[-1], ratio)  # Generate hex color based on time
                             image_data.append({
                                 "image": filename,
                                 "time": datetime_obj.strftime("%H:%M"),
@@ -71,7 +71,7 @@ def analyze_images(directory):
     return image_data, skipped_images
 
 if __name__ == "__main__":
-    input_directory = "path/to/your/images/folder"
+    input_directory = "path/to/your/images/folder"  # Set the directory containing images
     output_data, skipped_images = analyze_images(input_directory)
     
     # Create a DataFrame from the processed data and export it to a CSV file
