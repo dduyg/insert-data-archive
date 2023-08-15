@@ -10,7 +10,7 @@ The script is designed to be flexible and can be customized further based on you
 datetime manipulation, and interaction with the Google Calendar API.
 
 ### Before running the script:
-- Make sure you have the required libraries installed.
-- Obtain client_secret.json from Google Developers Console and save it in the same directory as this script. Make sure the filename is exactly `client_secret.json`.
+- Make sure you have the required libraries installed
+- Obtain client_secret.json from Google Developers Console and save it in the same directory as this script. Make sure the filename is exactly `client_secret.json`
 
 Run the script and authenticate with your Google account to access your Google Calendar data.
