@@ -104,7 +104,7 @@ def get_calendar_tasks():
 def main():
     tasks = get_calendar_tasks()
     
-    # Convert tasks to a Pandas DataFrame with a more descriptive name
+    # Convert tasks to a Pandas DataFrame
     tasks_df = pd.DataFrame(tasks)
     
     # You can now use Pandas functions to manipulate, analyze, and export the data
