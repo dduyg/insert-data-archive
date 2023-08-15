@@ -4,8 +4,8 @@
 The script retrieves tasks from Google Calendar and identifies whether each task is "hedonic" or "eudaimonic" based on predefined keywords found in the task names. It uses the Google Calendar
 API to retrieve events that occurred within the last two months. *The categorization is performed using regular expressions to identify hedonic and eudaimonic patterns in the task names.*
 
-> Techniques used include OAuth 2.0 authentication, regular expressions for task categorization,
-datetime manipulation, and interaction with the Google Calendar API.
+> <samp>Techniques used include OAuth 2.0 authentication, regular expressions for task categorization,
+datetime manipulation, and interaction with the Google Calendar API.</samp>
 
 ### Before running the script:
 - Make sure you have the required libraries installed
