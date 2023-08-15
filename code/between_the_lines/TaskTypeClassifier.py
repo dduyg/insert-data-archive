@@ -6,7 +6,7 @@ This script interacts with the Google Calendar API to retrieve tasks from the us
 and identifies whether each task is "hedonic" or "eudaimonic" based on predefined keywords found in
 the task names. The tasks are filtered to include only those that occurred within the last two months,
 and the results are stored in a Pandas DataFrame for further analysis. The script is designed to be
-flexible and can be customized further based on your specific needs.
+flexible and can be customized further based on specific needs.
 
 Before running the script:
 - Make sure you have the required libraries installed
