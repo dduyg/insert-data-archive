@@ -1,5 +1,5 @@
 # `TaskTypeClassifier.py`
-*The script is designed to be flexible and can be customized further based on specific needs.*
+*<samp>The script is designed to be flexible and can be customized further based on specific needs.</samp>*
 
 
 This script retrieves tasks from Google Calendar and identifies whether each task is "hedonic" or "eudaimonic" based on predefined keywords found in the task names. It uses the Google Calendar
