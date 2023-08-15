@@ -1,3 +1,20 @@
+"""
+Written by Duygu Dağdelen as part of the "Between The Lines" project, 2022
+***************************************************************************
+
+This script interacts with the Google Calendar API to retrieve tasks from the user's
+Google Calendar that occurred within the last two months. It categorizes each task as either
+"hedonic" or "eudaimonic" based on predefined keywords found in the task names. The categorization
+is performed using regular expressions to identify hedonic and eudaimonic patterns in the task names.
+The script is designed to be flexible and can be customized further based on your specific needs.
+
+Usage:
+- Make sure you have the required libraries installed: google-api-python-client, google-auth-httplib2, google-auth-oauthlib, dateutil
+- Obtain client_secret.json from Google Developers Console and save it in the same directory as this script.
+- Run the script and authenticate with your Google account to access your Google Calendar data.
+
+"""
+
 import os
 import datetime
 import re
