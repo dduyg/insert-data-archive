@@ -1,4 +1,4 @@
-## Script Information
+# Explaining `TaskTypeClassifier.py` Script
 
 This script retrieves tasks from Google Calendar and identifies whether each task is categorized
 as hedonic or eudaimonic based on predefined keywords in the task names. It uses the Google Calendar
