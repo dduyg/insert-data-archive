@@ -11,7 +11,7 @@ designed to be flexible and can be customized further based on your specific nee
 
 Before running the script:
 - Make sure you have the required libraries installed
-- Obtain client_secret.json from Google Developers Console and save it in the same directory as this script. Make sure the filename is exactly client_secret.json.
+- Obtain client_secret.json from Google Developers Console and save it in the same directory as this script. Make sure the filename is exactly client_secret.json
 
 """
 
