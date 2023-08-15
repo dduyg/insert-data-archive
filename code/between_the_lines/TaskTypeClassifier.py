@@ -59,22 +59,22 @@ def categorize_task(task_name):
     else:
         return 'uncategorized'
 
-def get_calendar_tasks():
+def get_calendar_tasks(months_back=6):  # Make months_back parameter with default value of 6
     creds = authenticate_google_calendar()
     service = build('calendar', 'v3', credentials=creds)
     
     # Define the calendar ID or leave it as 'primary' for the default calendar
     calendar_id = 'primary'
     
-    # Calculate the start date for the last six months accurately
+    # Calculate the start date for the specified number of months back
     today = datetime.datetime.today()
-    six_months_ago = today - relativedelta(months=6)
+    months_ago = today - relativedelta(months=months_back)
     
     # Format the dates as strings in RFC3339 format for API query
-    start_date = six_months_ago.strftime('%Y-%m-%dT%H:%M:%S') + 'Z'
+    start_date = months_ago.strftime('%Y-%m-%dT%H:%M:%S') + 'Z'
     end_date = today.strftime('%Y-%m-%dT%H:%M:%S') + 'Z'
     
-    # Define the query parameters to filter tasks for the last six months
+    # Define the query parameters to filter tasks for the specified months back
     events_result = service.events().list(
         calendarId=calendar_id,
         singleEvents=True,
@@ -101,7 +101,7 @@ def get_calendar_tasks():
     return tasks
 
 def main():
-    tasks = get_calendar_tasks()
+    tasks = get_calendar_tasks(months_back=6)  # Specify the desired number of months back
     
     # Convert tasks to a Pandas DataFrame
     tasks_df = pd.DataFrame(tasks)
