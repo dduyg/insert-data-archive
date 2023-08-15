@@ -66,15 +66,15 @@ def get_calendar_tasks():
     # Define the calendar ID or leave it as 'primary' for the default calendar
     calendar_id = 'primary'
     
-    # Calculate the start date for the last two months accurately
+    # Calculate the start date for the last three months accurately
     today = datetime.datetime.today()
-    two_months_ago = today - relativedelta(months=2)
+    three_months_ago = today - relativedelta(months=3)
     
     # Format the dates as strings in RFC3339 format for API query
-    start_date = two_months_ago.strftime('%Y-%m-%dT%H:%M:%S') + 'Z'
+    start_date = three_months_ago.strftime('%Y-%m-%dT%H:%M:%S') + 'Z'
     end_date = today.strftime('%Y-%m-%dT%H:%M:%S') + 'Z'
     
-    # Define the query parameters to filter tasks for the last two months
+    # Define the query parameters to filter tasks for the last three months
     events_result = service.events().list(
         calendarId=calendar_id,
         singleEvents=True,
