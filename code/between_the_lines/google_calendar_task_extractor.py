@@ -18,6 +18,7 @@ Usage:
 import os
 import datetime
 import re
+import pandas as pd
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
 from google.auth.transport.requests import Request
@@ -103,9 +104,11 @@ def get_calendar_tasks():
 def main():
     tasks = get_calendar_tasks()
     
-    # You can further process or save the tasks as a dataset here
-    for task in tasks:
-        print(task)
+    # Convert tasks to a Pandas DataFrame with a more descriptive name
+    tasks_df = pd.DataFrame(tasks)
+    
+    # You can now use Pandas functions to manipulate, analyze, and export the data
+    print(tasks_df)
 
 if __name__ == '__main__':
     main()
