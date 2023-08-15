@@ -47,13 +47,13 @@ def authenticate_google_calendar():
     
     return creds
 
-def categorize_task(task_name):
+def categorize_task(task_name, description):
     hedonic_keywords = re.compile(r'\b(hedon(ic|ism|istic))\b', re.IGNORECASE)
     eudaimonic_keywords = re.compile(r'\b(eudaimon(ic|ism|istic))\b', re.IGNORECASE)
 
-    if re.search(hedonic_keywords, task_name):
+    if re.search(hedonic_keywords, task_name) or re.search(hedonic_keywords, description):
         return 'hedonic'
-    elif re.search(eudaimonic_keywords, task_name):
+    elif re.search(eudaimonic_keywords, task_name) or re.search(eudaimonic_keywords, description):
         return 'eudaimonic'
     else:
         return 'uncategorized'
@@ -87,7 +87,8 @@ def get_calendar_tasks(months_back=6):  # Make months_back parameter with defaul
         # Extract task name, start date, and type of task (hedonic/eudaimonic)
         task_name = event['summary']
         event_start = event['start'].get('dateTime', event['start'].get('date'))
-        type_of_task = categorize_task(task_name)
+        event_description = event.get('description', '')  # Get the event description (if available)
+        type_of_task = categorize_task(task_name, event_description)
         
         # Convert date string to Python datetime object
         if 'T' in event_start:
