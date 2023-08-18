@@ -7,16 +7,16 @@ import colorsys
 # Define time ranges and corresponding hex color ranges
 time_ranges = [
     # The morning range with shades of yellow colors.
-    ("Morning", (6, 12), ['#E7D48F', '#EDDB6F', '#e2cc0d']),
+    ("Morning", (6, 11), ['#E7D48F', '#EDDB6F', '#e2cc0d']),
     
     # The early afternoon range with shades of green colors.
-    ("Early Afternoon", (12, 15), ['#CEDCB8', '#B4F735', '#4AD83D']),
+    ("Early Afternoon", (12, 14), ['#CEDCB8', '#B4F735', '#4AD83D']),
     
     # The late afternoon range with shades of blue colors.
-    ("Late Afternoon", (15, 18), ['#87B7B6', '#15C3C3', '#377D9B']),
+    ("Late Afternoon", (15, 17), ['#87B7B6', '#15C3C3', '#377D9B']),
     
     # The evening range with shades of pink colors.
-    ("Evening", (18, 21), ['#EDB7CF', '#FD94CF', '#CC5CCC', '#CB21B5']),
+    ("Evening", (18, 20), ['#EDB7CF', '#FD94CF', '#CC5CCC', '#CB21B5']),
     
     # The night range with shades of purple/dark blue colors.
     ("Night", (21, 6), ['#CFBCD0', '#93849F', '#5449C7', '#131F8F'])
