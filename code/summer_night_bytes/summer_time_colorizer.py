@@ -22,8 +22,8 @@ time_ranges = [
     ("Night", (21, 5), ['#CFBCD0', '#93849F', '#5449C7', '#131F8F'])
 ]
 
-# Function to categorize the time range based on hour
-def categorize_time_range(hour):
+# Function to assign the time range based on hour
+def assign_time_range(hour):
     for label, (start, end), _ in time_ranges:
         # Check if the hour falls within the specified range, considering wrapping around midnight
         if (start <= end and start <= hour < end) or (start > end and (start <= hour or hour < end)):
@@ -43,7 +43,7 @@ def generate_hex_color(min_hex, max_hex, ratio):
 
 # Function to analyze images in the given directory
 def analyze_images(directory):
-    image_data = []  # List to store categorized image data
+    image_data = []  # List to store assigned image data
     skipped_images = []  # List to store images without DateTimeOriginal tag
     
     for filename in os.listdir(directory):
@@ -58,16 +58,16 @@ def analyze_images(directory):
                     capture_time = exif_data[36867]  # Extract DateTimeOriginal tag value
                     datetime_obj = datetime.strptime(capture_time, "%Y:%m:%d %H:%M:%S")
                     hour = datetime_obj.hour
-                    time_category = categorize_time_range(hour)  # Categorize time based on hour
+                    time_range = assign_time_range(hour)  # Assign time range based on hour
                     
                     for label, (start, end), hex_range in time_ranges:
-                        if label == time_category:
+                        if label == time_range:
                             ratio = (hour - start) / (end - start)
                             hex_color = generate_hex_color(hex_range[0], hex_range[-1], ratio)  # Generate hex color based on time
                             image_data.append({
                                 "image": filename,
                                 "time": datetime_obj.strftime("%H:%M"),
-                                "category": time_category,
+                                "assigned_range": time_range,
                                 "hex_color_code": hex_color
                             })
                             break
