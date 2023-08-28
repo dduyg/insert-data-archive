@@ -15,12 +15,12 @@ class SelfReflectionTool:
         ]
         self.eudaimonic_questions = [
             "Did this task involve developing a skill, learning something new, or gaining insights?",
-            "Did you feel that this task allowed you to bring out the best in yourself?",
             "Did you consider this task a step toward achieving your long-term aspirations?",
             "Did you engage in this task to achieve personal growth or development?",
-            "Did this task align with something you strongly believe in?",
             "Did you strive for excellence or work towards a personal ideal through this task?",
-            "Was the primary reason for this task to further your journey toward self-improvement?"
+            "Was the primary reason for this task to further your journey toward self-improvement?",
+            "Did you feel a sense of accomplishment or personal fulfillment from completing this task?",
+            "Did this task contribute to your overall sense of purpose and meaning in life?"
         ]
         self.all_questions = self.shuffle_mixed_questions()
 
